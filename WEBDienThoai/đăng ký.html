@@ -1,0 +1,83 @@
+<html>
+<head>
+  <title>Đăng ký</title>
+  <style>
+    /* Định dạng trang web */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Định dạng form đăng ký */
+    .register-form {
+      max-width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+    }
+    
+    .register-form h2 {
+      text-align: center;
+    }
+    
+    .register-form input[type="text"],
+    .register-form input[type="email"],
+    .register-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    .register-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-form">
+    <h2>Đăng ký</h2>
+    <form onsubmit="return validateRegistration()">
+      <input type="text" id="username" placeholder="Tên người dùng" required>
+      <input type="email" id="email" placeholder="Địa chỉ email" required>
+      <input type="password" id="password" placeholder="Mật khẩu" required>
+      <button type="submit">Đăng ký</button>
+    </form>
+  </div>
+
+  <script>
+    function validateRegistration() {
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      
+      // Kiểm tra xem dữ liệu đăng ký có hợp lệ hay không
+      if (username.trim() === "") {
+        alert("Vui lòng nhập tên người dùng!");
+        return false;
+      }
+      
+      if (email.trim() === "") {
+        alert("Vui lòng nhập địa chỉ email!");
+        return false;
+      }
+      
+      if (password.trim() === "") {
+        alert("Vui lòng nhập mật khẩu!");
+        return false;
+      }
+      
+      alert("Đăng ký thành công!");
+      return true;
+    }
+  </script>
+</body>
+</html>
